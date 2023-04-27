@@ -28,12 +28,7 @@ class LocationProvider: NSObject {
 
   func requestPermission(_ level: String) -> Void {
     checkPlistKeys(level)
-
-    if level == "whenInUse" {
-      locationManager.requestWhenInUseAuthorization()
-    } else if level == "always" {
-      locationManager.requestAlwaysAuthorization()
-    }
+    locationManager.requestWhenInUseAuthorization()
   }
 
   func getCurrentLocation(_ options: LocationOptions) -> Void {
